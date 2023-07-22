@@ -1,21 +1,21 @@
 type Dog{
     id: ID!
-    breed: breed!
-    name: name!
-    owner: owner!
+    breed: String!
+    name: String!
+    owner: String!
 }
 
 type Query{
     findAllDogs: [Dog]!
-    findDogBreeds: [String]!
-    findALllDogNames: [String]!
+    findAllBreeds: [String]!
+    findAllDogNames: [String]!
     findDogBreedById(id: ID!): Dog!
-
+    findDogBreeds(breed: String!): [String]!
 }
 
 type Mutation{
-    newDog(name: String!, breed: String!,owner: String!) Dog!
-    deleteDog(id: ID!) : Long!
-    updateDogOwner(owner : String!, id: ID!): Dog!
+    newDog(name: String!, breed: String!, owner: String!) : Dog!
+    deleteDog(id: ID!) : Boolean!
+    updateDogOwner(id: ID!, owner: String!): String!
     deleteDogBreed(breed: String!): [Dog]!
 }

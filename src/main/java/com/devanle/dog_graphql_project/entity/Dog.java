@@ -34,11 +34,6 @@ public class Dog {
         this.breed = breed;
         this.owner = owner;
     }
-
     public Dog() {
-
     }
-
-
-
 }
